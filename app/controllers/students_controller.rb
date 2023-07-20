@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-    before_action :set_student, only: %i[show,udate,edit,destroy]
+    before_action :set_student, only: %i[show update edit destroy]
     def index 
         @students = Student.all
     end
@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
         #     email: params[:student][:email]
         # )
         if @student.save
-            redirect_to students_path
+            redirect_to students_path, notice: "Student has been created successfully"
         else
             render :new
         end  
@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
     def update
         
         if @student.update(student_params)
-            redirect_to student_path(@student)
+            redirect_to student_path(@student), notice: "Student has been updated successfully"
         else 
             render :edit
         end
@@ -42,7 +42,7 @@ class StudentsController < ApplicationController
     def destroy
         
         @student.destroy
-        redirect_to students_path
+        redirect_to students_path, notice: "Student has been deleted successfully"
     end
 
     private 
