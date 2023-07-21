@@ -1,36 +1,64 @@
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
 
 th {
-    background-color: antiquewhite;
-    border: 1px solid ;
-    text-align: left;
-    padding: 8px;
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
-td {
-    
-    border: 1px solid ;
-    text-align: left;
-    padding: 8px;
+form {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
 }
 
-td:last-child {
-    white-space:nowrap
+
+.form-container div {
+  margin-bottom: 15px;
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+}
+.form-container label {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+
+
 
 label {
     font-weight: bold;
     margin-right: 5px;
   }
 
-  /* input[type="text"],
-  input[type="email"]
-  input[type="number"]{
-  padding: 10px 20px;
-  border: 1px;
-  cursor: pointer;
-} */
+  
+
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="number"],
+  .form-container input[type="select"],
+  .form-container input[type="date"]
+  {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 80%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+  }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_21_061101) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_21_110616) do
   create_table "courses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -34,6 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_21_061101) do
     t.integer "age"
     t.date "date_of_birth"
     t.string "gender"
+    t.string "indian"
+    t.string "subjects"
   end
 
 end

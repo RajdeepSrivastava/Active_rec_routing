@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
             redirect_to student_path(@student), notice: "Student has been updated successfully"
         else 
             render :edit
-        end
+        end 
 
     end
 
@@ -48,7 +48,7 @@ class StudentsController < ApplicationController
     private 
 
     def student_params
-        params.require(:student).permit(:first_name, :last_name, :email,:age, :gender, :date_of_birth, subjects: [])
+        params.require(:student).permit(:first_name, :last_name, :email,:age, :gender, :date_of_birth, :indian, subjects: [])
     end
 
     def set_student

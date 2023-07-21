@@ -6,5 +6,15 @@
 <p><strong> First Name: </strong><%= @student.first_name %></p>
 <p><strong> Last Name: </strong><%= @student.last_name %></p>
 <p><strong> Email: </strong> <%= @student.email %></p>
+<p><strong> Age: </strong> <%= @student.age %></p>
+<p><strong> Gender: </strong> <%= @student.gender %></p>
+<p><strong> Date_of_Birth: </strong> <%= @student.date_of_birth %></p>
+<p><strong> Indian: </strong> <%= @student.indian %></p>
+<p><strong> Subjects:</strong></p>
+<ul>
+  <% @student.subjects&.each do |subject| %>
+    <li><%= subject %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Back', students_path %> | <%= link_to 'Edit', edit_student_path(@student) %>

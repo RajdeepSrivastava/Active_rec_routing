@@ -10,41 +10,52 @@
         <%= form.text_field :first_name %>
     </div>
 
-    <div>
+    <div style="margin-top: 15px;">
         <%= form.label :last_name %> <br>
         <%= form.text_field :last_name %>
     </div>
 
-    <div>
+    <div style="margin-top: 15px;">
         <%= form.label :email %><br>
         <%= form.email_field :email %>
     </div>
 
-    <div>
+    <div style="margin-top: 15px;">
         <%= form.label :age %><br>
         <%= form.number_field :age %>
     </div>
 
-    <div>   
+    <div style="margin-top: 15px;">
         <%= form.label :gender %><br>
         <%= form.select :gender, ['Male', 'Female', 'Other'] %>
     </div>
 
-    <div>
+    <div style="margin-top: 15px;">
         <%= form.label :date_of_birth %><br>
         <%= form.date_field :date_of_birth %>
     </div>
 
-    <div>
+    <div style="margin-top: 15px;">
         <%= form.label :subjects, "Subjects" %><br>
         <% available_subjects = ['Math', 'Science', 'Hindi', 'English']%>
         <% available_subjects.each do |subject| %>
             <%= check_box_tag "student[subjects][]", subject, @student.subjects&.include?(subject) %>
-            <%= label_tag "student_subjects_#{subject}", subject %><br>
+            <%= label_tag "student_subjects_#{subject}", subject %>
         <% end %>
     </div>
 
-    <div>
+    
+    <div style="margin-top: 25px;">
+        <%= form.label :indian %><br>
+         <div class="radio-container">
+        <%= form.radio_button :indian, 'YES' %>
+        <%= form.label :indian_yes, 'YES'%><br>
+
+        <%= form.radio_button :indian, 'NO' %>
+        <%= form.label :indian_no, 'NO'%>
+       </div>
+    </div>
+    <div style="text-align: center; border: 0 solid #ccc; padding: 20px;">
         <%= form.submit %>
     </div>
 
