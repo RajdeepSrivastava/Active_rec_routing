@@ -21,6 +21,32 @@
     </div>
 
     <div>
+        <%= form.label :age %><br>
+        <%= form.number_field :age %>
+    </div>
+
+    <div>   
+        <%= form.label :gender %><br>
+        <%= form.select :gender, ['Male', 'Female', 'Other'] %>
+    </div>
+
+    <div>
+        <%= form.label :date_of_birth %><br>
+        <%= form.date_field :date_of_birth %>
+    </div>
+
+    <div>
+        <%= form.label :subjects, "Subjects" %><br>
+        <% available_subjects = ['Math', 'Science', 'Hindi', 'English']%>
+        <% available_subjects.each do |subject| %>
+            <%= check_box_tag "student[subjects][]", subject, @student.subjects&.include?(subject) %>
+            <%= label_tag "student_subjects_#{subject}", subject %><br>
+        <% end %>
+    </div>
+
+    <div>
         <%= form.submit %>
     </div>
+
+        
 <% end %>

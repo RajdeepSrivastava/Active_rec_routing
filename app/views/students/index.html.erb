@@ -9,6 +9,9 @@
            <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Date_Of_Birth</th>
             <th colspan="4">Actions</th>
         </tr>
     </thead>
@@ -19,9 +22,13 @@
             <td><%= student.first_name %></td>
             <td><%= student.last_name %></td>
             <td><%= student.email %></td>
+            <td><%= student.age%></td>
+            <td><%= student.gender %></td>
+            <td><%= student.date_of_birth %></td>
             <td><%= link_to 'View', student %></td>
             <td><%= link_to 'Edit', edit_student_path(student) %></td>
             <td><%= link_to 'Delete', student, data: { "turbo-method": :delete, "turbo_confirm": "Are you sure" } %></td>
+            
         </tr>
 
     <% end %>
